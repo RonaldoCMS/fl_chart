@@ -129,6 +129,9 @@ class PieChartSectionData {
   /// value can not be null.
   final double value;
 
+  int? veryIndex;
+  bool selected = false;
+
   /// Defines the color of section.
   final Color color;
 
@@ -190,9 +193,11 @@ class PieChartSectionData {
     double? value,
     Color? color,
     double? radius,
+    int? veryIndex,
     bool? showTitle,
     TextStyle? titleStyle,
     String? title,
+    bool selected = false,
     BorderSide? borderSide,
     Widget? badgeWidget,
     double? titlePositionPercentageOffset,
@@ -200,6 +205,8 @@ class PieChartSectionData {
   })  : value = value ?? 10,
         color = color ?? Colors.cyan,
         radius = radius ?? 40,
+        veryIndex = veryIndex,
+        selected = selected,
         showTitle = showTitle ?? true,
         titleStyle = titleStyle,
         title = title ?? (value == null ? '' : value.toString()),
